@@ -1,0 +1,8 @@
+<dataConfig>
+<document>
+<entity processor="TikaEntityProcessor" url="your document url" dataSource="bin" format="html" rootEntity="false">
+<field column="Author" meta="true" name="author"/>
+<field column="title" meta="true" name="docTitle"/>
+</entity>
+<document>
+</dataConfig>

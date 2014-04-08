@@ -1,0 +1,11 @@
+<dataConfig>
+<dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/dbname" user="db_username" password="db_password"/>
+<document>
+<entity name="item" query="select * from item">
+<entity name="feature" query="select description as features from feature where item_id='${item.ID}'"/>
+<entity name="item_category" query="select CATEGORY_ID from item_category where item_id='${item.ID}'">
+<entity name="category" query="select description as cat from category where id = '${item_category.CATEGORY_ID}'"/>
+</entity>
+</entity>
+</document>
+</dataConfig>

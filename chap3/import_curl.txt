@@ -1,0 +1,1 @@
+curl http://localhost:8983/solr/update/csv?stream.file=exampledocs/books.csv&stream.contentType=text/plain;charset=utf-8

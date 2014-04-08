@@ -1,0 +1,26 @@
+//dismax
+
+http://localhost:8983/solr/select/?defType=dismax
+
+http://localhost:8983/solr/collection1/select?q=&q.alt=”Stan Lee”&defType=dismax
+
+// Stan search with Dismax
+http://localhost:8983/solr/collection1/select?q=Stan&fl=name+artist&wt=json&indent=true&defType=dismax
+
+// Stan with qf
+http://localhost:8983/solr/collection1/select?q=Stan&fl=name+artist&wt=json&indent=true&defType=dismax&qf=artist^200.0+name^0.1
+
+//Lower case operator
+http://localhost:8983/solr/collection1/select?q"Anyone+Who+Had+a+Heart"+or+"In+the+Middle+of+Nowhere"&wt=json&indent=true&defType=edismax&lowercaseOperators=true
+
+//Multiple Boosts
+http://localhost:8983/solr/collection1/select?q "Anyone+Who+Had+a+Heart" or "Dionne+Warwick" &wt=json&indent=true&defType=edismax&qf=artist^50+name^0.2&bq=kind:recording^50&lowercaseOperators=true
+
+//facte
+http://localhost:8983/solr/collection1/select?q=*%3A*&wt=json&indent=true&facet.method=fc&facet=true&facet.field=kind&facet.sort=index
+
+//pivot
+q=*:*&facet.pivot=category,popularity,inStock&facet.pivot=popularity, category&facet=true&facet.field=category
+
+//HL
+http://localhost:8983/solr/collection1/select?q=recording&rows=1&wt=json&indent=true&hl=true&hl.fl=name&hl.simple.pre=%3Cem%3E&hl.simple.post=%3C%2Fem%3E

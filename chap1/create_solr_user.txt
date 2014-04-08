@@ -1,0 +1,3 @@
+sudo useradd -d /opt/solr -s /sbin/false solr
+chown solr:solr -R /opt/solr
+chown solr:solr -R /var/log/solr # if you use alternative folder for logs

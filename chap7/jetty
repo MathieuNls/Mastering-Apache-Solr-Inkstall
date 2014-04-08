@@ -1,0 +1,26 @@
+sudo mkdir /usr/local/share/jetty
+sudo tar zxvf jetty-distribution-9.0.6.v20130930.tar.gz -C /usr/local/share/jetty
+sudo adduser jettyuser
+sudo chown jettyuser –R /usr/local/share/jetty/
+sudo cp -a /usr/local/share/jetty/jetty.sh /etc/init.d/jetty
+
+<!------------ /etc/default/jetty content ---------->
+
+JAVA_HOME=/usr/lib/jvm/jdk1.7.0_25
+NO_START=0 
+JETTY_HOST=0.0.0.0 
+JETTY_USER=jettyuser
+JAVA_OPTIONS="-Dsolr.solr.home=/usr/local/solr $JAVA_OPTIONS"
+
+
+echo "export $JETTY_HOME/usr/local/share/jetty/" >> ~/.profile
+./etc/init.d/jetty start
+
+cp -a solr/dist/solr-4.3.0.war /usr/local/share/jetty/webapps/solr.war
+cp -a solr/example/solr/usr/local/share/solr
+cp -a solr/dist/usr/local/share/solr
+cp -a solr/contrib/usr/local/share/solr
+cp -a solr/example/contexts/solr-jetty-context.xml /usr/local/share/jetty/webapps/solr.xml
+cp -a solr-4.3.0/example/lib/ext/* /usr/local/share/jetty/lib/ext/
+sudo chown jettyuser –R /usr/local/share/solr/
+./etc/init.d/jetty restart

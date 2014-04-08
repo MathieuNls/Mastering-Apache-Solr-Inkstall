@@ -1,0 +1,28 @@
+//Query
+
+http://localhost:8983/solr/collection1/select?q=*%3A*&wt=json&indent=true
+
+//Descending sort of ids
+http://localhost:8983/solr/collection1/select?q=*%3A*&sort=id+desc&wt=json&indent=true
+
+//Ascending sort of ids
+http://localhost:8983/solr/collection1/select?q=*%3A*&sort=id+asc&wt=json&indent=true
+
+//Querying Sort Kind Ascending and Id descending
+http://localhost:8983/solr/collection1/select?q=*%3A*&sort=kind+asc%2C+id+desc&wt=json&indent=true
+
+//Field selection command.
+http://localhost:8983/solr/collection1/select?q=*%3A*&fl=id+name&wt=json&indent=true
+
+//Format Argument
+http://localhost:8983/solr/collection1/select?q=*%3A*&wt=json
+
+//More Like This
+http://localhost:8983/solr/collection1/select?q=*%3A*&wt=json&mlt=true
+
+//Complet one
+http://localhost:8983/solr/collection1/select?q=recording+Stevie+Moore&sort=id+asc%2C+name+desc&fl=id+name&wt=ruby&indent=true 
+
+//FQ
+http://localhost:8983/solr/collection1/select?q=recording+Stevie+Moore&sort=id+asc%2C+name+desc&fl=id+name&wt=json&indent=true&fq=id:(artist:1000248 OR artist:1004531)
+

@@ -1,0 +1,23 @@
+// TOMCAT
+
+sudo apt-get install tomcat7 tomcat7-admin
+
+sudo cp solr/example/webapps/solr.war solr/example/solr/solr.war
+
+sudo cp solr-4.4.0/example/lib/ext/*.jar /usr/share/tomcat7/lib/
+
+sudo cp solr-4.4.0/example/resources/log4j.properties /usr/share/tomcat7/lib/
+
+cd /etc/tomcat7/Catalina/localhost
+sudo touch solr.xml
+
+<!-------- SOLR.XML CONTENT ---------------->
+
+<Context docBase="/solr-4.4.0/example/solr/solr.war">
+<Environment name="solr/home" type="java.lang.String" value="/solr-4.4.0/example/solr/" />
+</Context>
+
+<!-------- New USER ---------------->
+
+<role rolename="manager-gui"/>
+<role username=”tomcat-user” password=”tomcat-password” roles=”manager-gui”/>

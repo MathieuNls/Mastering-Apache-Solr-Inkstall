@@ -1,0 +1,19 @@
+unzip jboss-eap-6.1.0.zip
+sudo mv jboss-eap-6.1 /usr/local/share/jboss
+add user jbossadm
+chown jbossadm –R /usr/local/share/jboss
+su jbossadm
+cd /usr/local/share/jboss/bin	
+./add-user.sh
+./standalone.sh
+mv solr/ /usr/local/share/jboss/solr
+sudo cp /usr/local/share/jboss/solr /example/webapps/solr.war /usr/local/share/jboss/solr/
+
+<!-------------- Standalone.xml content --------->
+
+<system-properties>
+<property name="solr.solr.home" value="/usr/local/share/jboss/solr"/>
+<property name="solr.data.dir" value="/usr/local/jboss/solr/data"/>
+<property name="org.apache.catalina.connector.URI_ENCODING" value="UTF-8"/>
+<property name="org.apache.catalina.connector.USE_BODY_ENCODING_FOR_QUERY_STRING" value="true"/>
+</system-properties>

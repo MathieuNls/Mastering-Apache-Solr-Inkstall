@@ -1,0 +1,1 @@
+solr/solr-4.3.0/example/exampledocs$ java –jar post.jar  solr.xml monitor.xml

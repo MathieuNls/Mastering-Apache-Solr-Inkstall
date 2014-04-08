@@ -1,0 +1,13 @@
+<dataConfig>
+<dataSource type="FileDataSource" encoding="UTF-8" />
+<document>
+<entity name="page" processor="XPathEntityProcessor"
+stream="true"forEach="/mediawiki/page/"
+url="/data/enwiki-20130102-pages-articles.xml">
+<field column="id" xpath="/mediawiki/page/id" />
+<field column="title" xpath="/mediawiki/page/title" />
+<field column="user"      xpath="/mediawiki/page/revision/contributor/username" />
+<field column="userId"    xpath="/mediawiki/page/revision/contributor/id" />
+</entity>
+</document>
+</dataConfig>
