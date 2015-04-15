@@ -8,5 +8,4 @@ Mastering Apache Solr will guide you through the discovering of powerful mechani
 
 In this repository, you'll find the code sample related to Mastering-Apache-Solr.
 
-Amazon Link TBA.
-Inkstall Link TBA.
+[Amazon Link](http://www.amazon.ca/Mastering-Apache-Solr-practical-guide-ebook/dp/8192784509/ref=sr_1_1_twi_2_pap?ie=UTF8&qid=1429101969&sr=8-1&keywords=nayrolles) .
