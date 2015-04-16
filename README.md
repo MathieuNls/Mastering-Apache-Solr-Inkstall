@@ -1,5 +1,8 @@
 Mastering-Apache-Solr-Inkstall
 ==============================
+This repo contains the code mentionned in the book
+
+#In Details
 
 Mastering Apache Solr starts with introduction over Apache Solr underlying technologies and main differences with classical database engines. Through step by step recipes we will take advantage of all these open-source technologies.
 In this book, we will go under the surface of large number of topics such as why denormalize data, how to import classical databases' data inside Apache Solr, serve Solr through five different webservers and how to optimize them to serve Solr even faster. One important and major topic covered in this book is the Querying mechanism of Solr which will become a strong ally during this journey. Finally, we this book covers how to communicate with Solr using different programming languages before deploying in a cloud based environment.
